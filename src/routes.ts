@@ -5,6 +5,6 @@ const routes = Router()
 
 const processText = new ProcessText()
 
-routes.post('/rewrite', processText.rewrite)
+routes.post('/api/rewrite', processText.rewrite)
 
 export { routes }

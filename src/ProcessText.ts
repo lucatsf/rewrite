@@ -8,7 +8,6 @@ export class ProcessText {
     const parseText = new ParseText()
 
     const { text } = req.body
-
     const { textLength, textWords, textWordsRepeated } = await parseText.analyze(text)
 
     const result = await paraphrase.processApi(text, 1)

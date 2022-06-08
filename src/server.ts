@@ -8,7 +8,7 @@ import cors from "cors"
 
 const app = express()
 
-const allowedOrigins = [process.env.ALLOWED_ORIGINS_PROD || '*']
+const allowedOrigins = [`${process.env.ALLOWED_ORIGINS_PROD}`]
 
 const options: cors.CorsOptions = {
   origin: allowedOrigins,
