@@ -10,17 +10,17 @@ export class ProcessText {
     const { text } = req.body
     const { textLength, textWords, textWordsRepeated } = await parseText.analyze(text)
 
-    const result = await paraphrase.processApi(text, 1)
+    const result = await paraphrase.processApi(text, 10)
 
     const {
       textLength: textLengthNewText,
       textWords: textWordsNewText,
       textWordsRepeated: textWordsRepeatedNewText,
-    } = await parseText.analyze(result[0])
+    } = await parseText.analyze(result[4])
 
     return res.json({
       newText: {
-        text: result,
+        text: [result[4]],
         textLength: textLengthNewText,
         textWords: textWordsNewText,
         textWordsRepeated: textWordsRepeatedNewText,
